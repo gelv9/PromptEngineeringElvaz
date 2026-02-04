@@ -1,33 +1,54 @@
-Proyecto – Preentrega Prompt Engineering
+Proyecto final: Del archivo al insight - Asistente de datos para pequeños emprendedores
+Resumen
 
-Este proyecto es mi preentrega para la materia IA – Generación de Prompts.
-La idea principal es resolver un problema común de los pequeños emprendedores en Argentina:
-muchos registran sus datos en planillas simples (CSV o Excel) pero no saben programar ni usar SQL para analizarlos.
+Este proyecto presenta una Prueba de Concepto (POC) de un asistente de análisis de datos diseñado para emprendedores en Argentina. El sistema utiliza modelos de lenguaje para transformar archivos CSV o Excel en información útil mediante consultas en lenguaje natural y visualizaciones automáticas.
+1. Introducción
+Presentación del problema
 
-Objetivo
+En Argentina, muchos emprendedores registran sus ventas en planillas simples pero carecen de conocimientos técnicos en programación o análisis avanzado. Esto genera una dependencia de especialistas y dificulta la toma de decisiones basada en evidencia, limitando el crecimiento de los negocios.
+Propuesta de solución
 
-Construí un flujo simple que permita:
+Se propone un asistente basado en Prompt Engineering que permite realizar tres tareas principales:
 
-Texto → Texto
+    Consultas de texto: El usuario pregunta en español y recibe una respuesta resumida y clara.
 
-El usuario puede hacer preguntas en lenguaje natural sobre sus datos.
+    Gráficos técnicos: Generación de visualizaciones precisas (barras, líneas) mediante código Python.
 
-El modelo devuelve un insight breve y accionable.
+    Infografías estéticas: Creación de piezas visuales conceptuales para facilitar la comunicación de resultados.
 
-Texto → Código → Imagen
+2. Objetivos
 
-A partir de la misma información, el modelo genera código en Python (Matplotlib).
+    Democratizar el acceso al análisis de datos para usuarios sin formación técnica.
 
-Ese código se ejecuta y devuelve un gráfico con los resultados.
+    Automatizar la generación de reportes visuales a partir de archivos planos.
 
-Texto → Imagen
+    Optimizar la interacción con modelos de IA mediante técnicas de Fast Prompting.
 
-El gráfico generado se utiliza como base para producir una infografía decorativa, más estética y fácil de comunicar.
+3. Justificación de Viabilidad
 
-Para esta parte usé el modelo gpt-image-1. Requiere tener la organización de OpenAI verificada, por lo que puede dar error 403 si no está habilitado.
+El proyecto es viable porque utiliza datasets simples de pocos registros, lo que asegura un bajo consumo de tokens y costos reducidos. Se utiliza GPT-4 (y sus versiones mini) por su capacidad probada para interpretar lenguaje natural y devolver resultados consistentes.
+4. Metodología y Tecnologías
+Herramientas utilizadas
 
-Contenido
+    Modelos: GPT-4o-mini para texto y código; DALL-E 3 para imágenes.
 
-notebook.ipynb → Notebook en Google Colab con todo el flujo.
+    Lenguaje: Python, utilizando librerías como Pandas para datos y Matplotlib para gráficos.
 
-dataset_prueba.csv → Dataset simple de ejemplo para correr las pruebas.
+    Entorno: Jupyter Notebook (Google Colab).
+
+Técnicas de Prompting
+
+    System Prompting: Definición de un rol de analista senior para guiar el tono y precisión de las respuestas.
+
+    In-Context Learning: Inyección de la estructura del dataset directamente en el prompt para evitar alucinaciones.
+
+    Dynamic Code Execution: El modelo genera código que se ejecuta en el entorno para garantizar la fidelidad de los datos.
+
+5. Resultados y Conclusiones
+
+La implementación demuestra que es posible obtener respuestas de negocio accionables y gráficos precisos de forma automática. Se concluye que el Prompt Engineering funciona como un puente efectivo entre el lenguaje natural y el análisis técnico, cumpliendo los objetivos planteados.
+6. Referencias
+
+    Documentación oficial de OpenAI.
+
+    Consignas del curso Coderhouse: "IA: Entretejiendo Imaginación y Algoritmos".
